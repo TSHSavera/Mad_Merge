@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Simple Login App"
+rootProject.name = "MAD MERGE"
 include(":app")
  
