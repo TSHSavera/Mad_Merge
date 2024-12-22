@@ -1,10 +1,32 @@
-<LinearLayout
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/layout_welcome"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context=".Welcome_page">-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/mad_merge_wallpaper" />-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#000000"/> &lt;!&ndash; Adjust alpha value for desired darkness &ndash;&gt;-->
+<!--    />-->
+
+<!--</LinearLayout>-->
+
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Welcome_page">
 
     <ImageView
@@ -13,6 +35,45 @@
         android:scaleType="centerCrop"
         android:src="@drawable/mad_merge_wallpaper" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B2000000" />
 
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:layout_marginTop="240dp"
+            android:src="@drawable/app_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mad  Merge"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/meowscript_app_title"/>
+
+        <Button
+            android:id="@+id/startGameBtn"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@drawable/custom_start_game_button"
+            android:text="Start"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+</FrameLayout>
+
