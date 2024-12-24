@@ -8,6 +8,6 @@
         android:radius="5dp">
     </corners>
    <solid
-       android:color="@color/white">
+       android:color="@color/md_theme_onBackground">
    </solid>
 </shape>
