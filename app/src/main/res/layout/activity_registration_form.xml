@@ -4,7 +4,7 @@
     android:id="@+id/layout_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/md_theme_onPrimary"
     android:orientation="vertical"
     tools:context=".Registration_Form">
 
@@ -33,8 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Register"
-            android:textColor="@color/white"
+            android:text="@string/register"
+            android:textColor="@color/md_theme_onPrimary"
             android:textSize="75sp"
             android:textStyle="bold"
             android:fontFamily="@font/meowscript_app_title"/>
@@ -45,7 +45,7 @@
             android:layout_marginTop="20dp"
             android:gravity="left"
             android:text="Username"
-            android:textColor="@color/white"
+            android:textColor="@color/md_theme_onPrimary"
             android:textSize="17sp" />
 
 
@@ -59,7 +59,7 @@
             android:paddingBottom="20dp"
             android:paddingLeft="15dp"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/md_theme_onPrimary"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
             android:layout_marginTop="15dp"
             android:gravity="left"
             android:text="Password"
-            android:textColor="@color/white"
+            android:textColor="@color/md_theme_onPrimary"
             android:textSize="17sp" />
 
         <EditText
@@ -81,7 +81,7 @@
             android:paddingLeft="15dp"
             android:textSize="20sp"
             android:inputType="textPassword"
-            android:textColor="@color/black"/>
+            android:textColor="@color/md_theme_onPrimary"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -89,7 +89,7 @@
             android:layout_marginTop="15dp"
             android:gravity="left"
             android:text="Confirm Password"
-            android:textColor="@color/white"
+            android:textColor="@color/md_theme_onPrimary"
             android:textSize="17sp" />
 
         <EditText
@@ -103,7 +103,7 @@
             android:paddingLeft="15dp"
             android:textSize="20sp"
             android:inputType="textPassword"
-            android:textColor="@color/black"/>
+            android:textColor="@color/md_theme_onPrimary"/>
 
         <Button
             android:id="@+id/loginBtn"
@@ -125,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"
-                android:textColor="@color/white"
+                android:textColor="@color/md_theme_onPrimary"
                 android:textSize="16sp"/>
 
             <TextView
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/md_theme_onPrimary"
                 android:layout_marginLeft="8dp"
                 android:textSize="17sp"/>
         </LinearLayout>
