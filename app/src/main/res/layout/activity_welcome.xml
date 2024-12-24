@@ -1,25 +1,3 @@
-<!--<LinearLayout-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:id="@+id/layout_welcome"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical"-->
-<!--    tools:context=".Welcome_page">-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/mad_merge_wallpaper" />-->
-
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:background="#000000"/> &lt;!&ndash; Adjust alpha value for desired darkness &ndash;&gt;-->
-<!--    />-->
-
-<!--</LinearLayout>-->
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"

@@ -1,0 +1,342 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcome_page">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mad_merge_wallpaper" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C4000000" />
+
+    <LinearLayout
+        android:id="@+id/layout_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/app_icon" />
+
+
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="286dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_icon" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/custom_box"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="45dp"
+                android:paddingTop="8dp"
+                android:paddingRight="45dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1268"
+                    android:textColor="#f3804c"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/custom_box"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="45dp"
+                android:paddingTop="8dp"
+                android:paddingRight="45dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2048"
+                    android:textColor="#f3804c"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/custom_save_new_game_btn"
+                    android:text="Save"/>
+
+                <Button
+                    android:id="@+id/newGameBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:background="@drawable/custom_save_new_game_btn"
+                    android:text="New game"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
