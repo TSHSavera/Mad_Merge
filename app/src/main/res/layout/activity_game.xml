@@ -93,6 +93,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/scoreLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1268"
@@ -121,6 +122,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/bestScoreLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2048"
