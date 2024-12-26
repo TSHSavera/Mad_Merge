@@ -6,6 +6,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,10 +18,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+
 public class MainActivity extends AppCompatActivity {
 
     Context context = this;
     TextView registerLink;
+    private FirebaseAuth mAuth;
 
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
     @Override
@@ -32,7 +39,67 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         startUp();
+
+        mAuth = FirebaseAuth.getInstance();
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mAuth.getCurrentUser() != null) {
+            Intent intent = new Intent(MainActivity.this, game.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void loginUser(String email, String password) {
+        // Show progress bar
+        ProgressBar progressBar = findViewById(R.id.loginProgressBar);
+
+        // Perform checks
+        if (email.isEmpty() || password.isEmpty()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setCancelable(false);
+            builder.setMessage("Please fill in all fields.");
+            builder.setTitle("Login Failed");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(MainActivity.this, game.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setCancelable(false);
+                        builder.setMessage("Login Failed. Please try again.");
+                        builder.setTitle("Login Failed");
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                        AlertDialog dialog = builder.create();
+                        // Hide progress bar
+                        progressBar.setVisibility(View.GONE);
+                        dialog.show();
+
+                    }
+                });
+    }
+
 
     private void startUp() {
         registerLink = findViewById(R.id.registerLink);
@@ -52,6 +119,16 @@ public class MainActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+
+        Button loginButton = findViewById(R.id.loginBtn);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText email = findViewById(R.id.usernameET);
+                EditText password = findViewById(R.id.passwordET);
+                loginUser(email.getText().toString(), password.getText().toString());
             }
         });
     }

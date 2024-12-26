@@ -8,7 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class game extends ComponentActivity {
+
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +25,16 @@ public class game extends ComponentActivity {
             return insets;
         });
         startUp();
+
+        mAuth = FirebaseAuth.getInstance();
+
     }
     private void startUp() {
-
+        // TEMPORARY: Use New Game as Logout
+        findViewById(R.id.newGameBtn).setOnClickListener(v -> {
+            // Logout
+            mAuth.signOut();
+            finish();
+        });
     }
 }
