@@ -345,12 +345,12 @@
                     android:textColor="@color/md_theme_onPrimary"/>
 
                 <Button
-                    android:id="@+id/newGameBtn"
+                    android:id="@+id/resignBtn"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="6dp"
                     android:background="@drawable/custom_save_new_game_btn"
-                    android:text="New game"
+                    android:text="Resign"
                     android:textColor="@color/md_theme_onPrimary"/>
 
             </LinearLayout>

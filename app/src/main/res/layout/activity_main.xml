@@ -120,14 +120,15 @@
                 android:textSize="16sp"/>
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/loginProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/md_theme_onPrimary"
+            android:indeterminateTintMode="src_atop" />
+
     </LinearLayout>
 
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/loginProgressBar"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/md_theme_onPrimary"
-        android:indeterminateTintMode="src_atop"
-        />
 </FrameLayout>

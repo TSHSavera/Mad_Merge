@@ -81,7 +81,7 @@ public class Registration_Form extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
             builder.setMessage("Please fill in all fields.");
-            builder.setTitle("Registration Form");
+            builder.setTitle("Registration Failed");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -99,7 +99,7 @@ public class Registration_Form extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
             builder.setMessage("Password must be at least 6 characters.");
-            builder.setTitle("Registration Form");
+            builder.setTitle("Registration Failed");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -117,7 +117,7 @@ public class Registration_Form extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
             builder.setMessage("Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
-            builder.setTitle("Registration Form");
+            builder.setTitle("Registration Failed");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -135,7 +135,7 @@ public class Registration_Form extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
             builder.setMessage("Passwords do not match.");
-            builder.setTitle("Registration Form");
+            builder.setTitle("Registration Failed");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -153,7 +153,7 @@ public class Registration_Form extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
             builder.setMessage("Username must be at least 4 characters.");
-            builder.setTitle("Registration Form");
+            builder.setTitle("Registration Failed");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {

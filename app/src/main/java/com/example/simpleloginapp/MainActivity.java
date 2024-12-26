@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Context context = this;
     TextView registerLink;
     private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
 
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
     @Override
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loginUser(String email, String password) {
         // Show progress bar
-        ProgressBar progressBar = findViewById(R.id.loginProgressBar);
+        progressBar.setVisibility(View.VISIBLE);
 
         // Perform checks
         if (email.isEmpty() || password.isEmpty()) {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    progressBar.setVisibility(View.GONE);
                     dialogInterface.dismiss();
                 }
             });
@@ -102,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void startUp() {
+        progressBar = findViewById(R.id.loginProgressBar);
+        progressBar.setVisibility(View.GONE);
         registerLink = findViewById(R.id.registerLink);
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override

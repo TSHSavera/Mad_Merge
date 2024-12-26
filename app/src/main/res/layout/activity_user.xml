@@ -52,7 +52,7 @@
             android:paddingLeft="30dp"
             android:paddingTop="35dp"
             android:paddingBottom="35dp"
-            android:text="Saved Game"
+            android:text="Saved Games"
             android:textColor="@color/md_theme_onPrimary"
             android:textSize="13sp" />
 
