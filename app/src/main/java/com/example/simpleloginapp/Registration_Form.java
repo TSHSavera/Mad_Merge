@@ -92,9 +92,18 @@ public class Registration_Form extends AppCompatActivity {
     private void createAccountThenPassContext(String email, String username, String password, String confirmPassword) {
         String status = createAccount(this, email, username, password, confirmPassword);
         if (status.isEmpty()) {
-            Intent intent = new Intent(context, MainActivity.class);
-            startActivity(intent);
-            finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setCancelable(false);
+            builder.setMessage("Registration Successful. You will be redirected to the Login Page.");
+            builder.setTitle("Registration Success");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent intent = new Intent(context, game.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
