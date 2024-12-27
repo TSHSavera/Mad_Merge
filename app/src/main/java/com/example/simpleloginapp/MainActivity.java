@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
 
+
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {

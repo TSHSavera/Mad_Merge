@@ -254,6 +254,8 @@ public class Auth {
 
                 if (status) {
                     Log.d("Auth", "User logged in successfully");
+                    // Set the instance
+                    instance = user;
                     return "";
                 } else {
                     Log.e("Auth", "Error logging in user");

@@ -31,7 +31,7 @@ public class game extends ComponentActivity {
     ImageView user_icon;
     Button saveBtn;
     Button resignBtn;
-    String username = Auth.getInstance(this).getUsername();
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,18 @@ public class game extends ComponentActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        try {
+            username = Auth.getInstance(this).getUsername();
+        } catch (Exception e) {
+            try {
+                username = Auth.getInstance(this).getUsername();
+
+            } catch (Exception e1) {
+                Log.e("GameEngine", "Error getting username", e1);
+            }
+        }
         startUp();
+
 
     }
     private void startUp() {
@@ -198,6 +209,22 @@ public class game extends ComponentActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // Check all the buttons if there are still 0 values
+                    int isGameOver = 0;
+                    for (Button button : buttons) {
+                        if (!button.getText().toString().equals("0")) {
+                            isGameOver++;
+                        }
+                    }
+
+                    if (isGameOver == 16) {
+                        try {
+                            saveScore(username, R.id.bestScoreLabel);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
                     // Check if the button is empty
                     if (button.getText().toString().isEmpty()) {
                         // Set the button to the current player
@@ -209,19 +236,19 @@ public class game extends ComponentActivity {
                         selectedButtonA[0] = button;
                         // Set the style to the selected
                         button.setBackgroundResource(R.drawable.custom_cube_btn_active);
-                        button.setTextColor(getResources().getColor(R.color.md_theme_onSecondary));
+                        //button.setTextColor(getResources().getColor(R.color.md_theme_onSecondary));
                     } else {
                         selectedButtonB[0] = button;
                         // Set the style to the selected
                         button.setBackgroundResource(R.drawable.custom_cube_btn_active);
-                        button.setTextColor(getResources().getColor(R.color.md_theme_onSecondary));
+                        //button.setTextColor(getResources().getColor(R.color.md_theme_onSecondary));
                         // Check if selectedButtonA is the same as selectedButtonB
                         if (selectedButtonA[0].equals(selectedButtonB[0])) {
                             // Set the style to the default
                             selectedButtonA[0].setBackgroundResource(R.drawable.custom_cube_btn);
                             selectedButtonB[0].setBackgroundResource(R.drawable.custom_cube_btn);
-                            selectedButtonA[0].setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
-                            selectedButtonB[0].setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                            //selectedButtonA[0].setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                            //selectedButtonB[0].setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
                             // If they are the same, clear the selected buttons
                             selectedButtonA[0] = null;
                             selectedButtonB[0] = null;
@@ -283,7 +310,7 @@ public class game extends ComponentActivity {
                             // Reset the style of the buttons
                             for (Button button : buttons) {
                                 button.setBackgroundResource(R.drawable.custom_cube_btn);
-                                button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                                //button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
                             }
 
                         }
@@ -329,7 +356,7 @@ public class game extends ComponentActivity {
                             // Reset the style of the buttons
                             for (Button button : buttons) {
                                 button.setBackgroundResource(R.drawable.custom_cube_btn);
-                                button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                                //button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
                             }
 
                         } else if (selectedButtonB[0].getText().toString().equals("0")) {
@@ -373,9 +400,20 @@ public class game extends ComponentActivity {
                             // Reset the style of the buttons
                             for (Button button : buttons) {
                                 button.setBackgroundResource(R.drawable.custom_cube_btn);
-                                button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                                //button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
 
                             }
+                        }
+                        // If the two buttons are not the same, clear the selected buttons
+                        else {
+                            // Reset the style of the buttons
+                            for (Button button : buttons) {
+                                button.setBackgroundResource(R.drawable.custom_cube_btn);
+                                //button.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
+                            }
+                            // Clear the selected buttons
+                            selectedButtonA[0] = null;
+                            selectedButtonB[0] = null;
                         }
                     }
                 }
