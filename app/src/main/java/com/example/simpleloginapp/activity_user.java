@@ -36,14 +36,14 @@ public class activity_user extends ComponentActivity {
         mAuth = FirebaseAuth.getInstance();
     }
     private void startUp() {
-        Button savedGameBtn = findViewById(R.id.savedGameBtn);
-        savedGameBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, saved_game.class);
-                startActivity(intent);
-            }
-        });
+//        Button savedGameBtn = findViewById(R.id.savedGameBtn);
+//        savedGameBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, saved_game.class);
+//                startActivity(intent);
+//            }
+//        });
 
         findViewById(R.id.logOutBtn).setOnClickListener(v -> {
             // Logout

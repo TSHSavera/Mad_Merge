@@ -49,7 +49,7 @@
         </activity>
 
         <activity
-            android:name=".saved_game"
+            android:name=".gameOver"
             android:exported="true"
             >
 

@@ -15,9 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Objects;
-
-public class saved_game extends ComponentActivity {
+public class gameOver extends ComponentActivity {
 
     Context context = this;
     ImageView user_icon;
@@ -28,12 +26,24 @@ public class saved_game extends ComponentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_saved_game);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layout_savedGame), (v, insets) -> {
+        setContentView(R.layout.activity_game_over);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layout_game_over), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Get the scores from the Intent
+        int score = getIntent().getIntExtra("SCORE", 0);
+        int bestScore = getIntent().getIntExtra("BEST_SCORE", 0);
+
+        // Update the UI with the scores
+        TextView scoreTextView = findViewById(R.id.scoreLabel);
+        TextView bestScoreTextView = findViewById(R.id.bestScoreLabel);
+
+        scoreTextView.setText(String.valueOf(score));
+        bestScoreTextView.setText(String.valueOf(bestScore));
+
         startUp();
     }
 
@@ -58,6 +68,9 @@ public class saved_game extends ComponentActivity {
 
         // Change the username to the current user
         TextView username = findViewById(R.id.username);
+        TextView usernameMidContent = findViewById(R.id.usernameMidContent);
+
         username.setText(Auth.getInstance(this).getUsername());
+        usernameMidContent.setText(Auth.getInstance(this).getUsername());
     }
 }

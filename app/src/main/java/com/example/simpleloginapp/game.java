@@ -24,6 +24,7 @@ public class game extends ComponentActivity {
     Button saveBtn;
     Button resignBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +35,8 @@ public class game extends ComponentActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        startUp();
 
+        startUp();
     }
     private void startUp() {
         user_icon = findViewById(R.id.user_icon);
@@ -85,7 +86,9 @@ public class game extends ComponentActivity {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(context, saved_game.class);
+                        Intent intent = new Intent(context, gameOver.class);
+                        intent.putExtra("SCORE", score);
+                        intent.putExtra("BEST_SCORE", bestScore);
                         startActivity(intent);
                     }
                 });
