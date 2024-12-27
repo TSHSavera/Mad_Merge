@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
+
     @SuppressLint({"ResourceAsColor", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             new Auth(this);
             Log.d ("User", "User is signed in: " + Objects.requireNonNull(Auth.getInstance(this)).getEmail());
-            Intent intent = new Intent(context, saved_game.class);
+            Intent intent = new Intent(context, gameOver.class);
             startActivity(intent);
             finish();
         }
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 //        AuthAPI auth = new AuthAPI();
 //        if (auth.login(this, email, password).isEmpty()) {
 //            // Successful login
-//            Intent intent = new Intent(context, saved_game.class);
+//            Intent intent = new Intent(context, gameOver.class);
 //            startActivity(intent);
 //            finish();
 //        } else {
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
     private void loginThenPassContext(String email, String password) {
         String status = new Auth(this).login(this,email, password);
         if (status.isEmpty()) {
-            Intent intent = new Intent(context, saved_game.class);
+            Intent intent = new Intent(context, gameOver.class);
             startActivity(intent);
             finish();
         } else {

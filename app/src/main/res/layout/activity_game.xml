@@ -89,15 +89,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Score"
-                    android:textColor="@color/md_theme_onPrimary"
+                    android:textColor="@color/md_theme_onBackground"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/scoreLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1268"
-                    android:textColor="#f3804c"
+                    android:text="0"
+                    android:textColor="@color/md_theme_onBackground"
                     android:textSize="23sp" />
 
             </LinearLayout>
@@ -125,7 +125,7 @@
                     android:id="@+id/bestScoreLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2048"
+                    android:text="70"
                     android:textColor="#f3804c"
                     android:textSize="23sp" />
 
@@ -146,89 +146,46 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/button1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button3"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button4"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="1dp"
-                    android:background="@drawable/custom_cube_btn"
-                    android:padding="0dp"
-                    android:text="8"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="1dp"
-                    android:background="@drawable/custom_cube_btn"
-                    android:padding="0dp"
-                    android:text="8"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="1dp"
-                    android:background="@drawable/custom_cube_btn"
-                    android:padding="0dp"
-                    android:text="8"
-                    android:textColor="@color/md_theme_onPrimary"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="1dp"
-                    android:background="@drawable/custom_cube_btn"
-                    android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
@@ -240,42 +197,46 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/button5"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button6"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button7"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button8"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
@@ -287,42 +248,97 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/button9"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button10"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button11"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/button12"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="1dp"
                     android:background="@drawable/custom_cube_btn"
                     android:padding="0dp"
-                    android:text="8"
+                    android:text="0"
+                    android:textColor="@color/md_theme_onPrimary"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="0"
+                    android:textColor="@color/md_theme_onPrimary"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="0"
+                    android:textColor="@color/md_theme_onPrimary"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/button15"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="0"
+                    android:textColor="@color/md_theme_onPrimary"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/button16"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/custom_cube_btn"
+                    android:padding="0dp"
+                    android:text="0"
                     android:textColor="@color/md_theme_onPrimary"
                     android:textSize="20sp" />
 

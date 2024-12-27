@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ public class gameOver extends ComponentActivity {
     Context context = this;
     ImageView user_icon;
     Button newGameBtn;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -48,6 +50,18 @@ public class gameOver extends ComponentActivity {
     }
 
     private void startUp() {
+        // Check if user is signed in (non-null) and update UI accordingly.
+        Auth auth = new Auth(this);
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
+            Log.i("User", "User is not signed in.");
+        } else {
+            new Auth(this);
+            Log.i("User", "User is signed in: " + Objects.requireNonNull(Auth.getInstance(this)).getEmail());
+            TextView username = findViewById(R.id.username);
+            username.setText(Objects.requireNonNull(Auth.getInstance(this)).getUsername());
+        }
+
+
         user_icon = findViewById(R.id.user_icon);
         user_icon.setOnClickListener(new View.OnClickListener() {
             @Override

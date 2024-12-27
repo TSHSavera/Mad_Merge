@@ -19,6 +19,8 @@ public class activity_user extends ComponentActivity {
 
     Context context = this;
     private FirebaseAuth mAuth;
+    String username = Auth.getInstance(this).getUsername();
+
 
     @SuppressLint("MissingInflatedId")
     @Override
