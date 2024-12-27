@@ -99,11 +99,13 @@ public class Registration_Form extends AppCompatActivity {
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent intent = new Intent(context, game.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
             });
+            AlertDialog dialog = builder.create();
+            dialog.show();
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setCancelable(false);
