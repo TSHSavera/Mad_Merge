@@ -20,7 +20,7 @@ import java.util.List;
 
 public class JsonProcessor {
     public static <User> List<User> readJsonFromFile(File file, Class<User> classOfT) {
-        List<User> objects = new ArrayList<>();
+        List<User> objects;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             StringBuilder sb = new StringBuilder();
@@ -137,71 +137,6 @@ public class JsonProcessor {
             return false; // Failure
         }
     }
-
-    // Function for saving "username":"highscore" key pairs only to a JSON file
-//    public static boolean saveHighScores(Context context, String username, int highScore) throws IOException {
-//        // Log the high score
-//        Log.d("JsonProcessor", "High score file content: " + new BufferedReader(new FileReader(new File(context.getFilesDir(), "highScores.json"))).readLine());
-//        // Create a new highScore object
-//        highScore newHighScore = new highScore(username, highScore);
-//
-//        Gson gson = new Gson();
-//        String jsonString = gson.toJson(newHighScore);
-//
-//        // Save the high score to the file
-//        try {
-//            File file = new File(context.getFilesDir(), "highScores.json");
-//
-//            // Read existing data if the file exists
-//            highScore existingHighScore = new highScore("", 0);
-//            if (file.exists()) {
-//                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-//                    StringBuilder sb = new StringBuilder();
-//                    String line;
-//                    while ((line = br.readLine()) != null) {
-//                        sb.append(line);
-//                    }
-//                    String existingJsonString = sb.toString();
-//
-//                    if (!existingJsonString.isEmpty()) { // Check if the file is not empty
-//                        existingHighScore = gson.fromJson(existingJsonString, highScore.class);
-//                    }
-//                } catch (IOException e) {
-//                    Log.e("JsonProcessor", "Error reading existing data from file", e);
-//                }
-//            }
-//
-//            // Check if the user already has a high score
-//            if (existingHighScore.username.equals(username)) {
-//                // Update the high score if the new score is higher
-//                if (highScore > existingHighScore.highScore) {
-//                    existingHighScore.highScore = highScore;
-//                    FileWriter writer = new FileWriter(file);
-//                    gson.toJson(existingHighScore, writer);
-//                    writer.flush();
-//                    writer.close();
-//                    return true; // Success
-//
-//                } else {
-//                    return false; // Do not update the high score
-//                }
-//            } else {
-//                // Add the new high score to the file
-//                // Combine existing and new objects
-//                FileWriter writer = new FileWriter(file);
-//                gson.toJson(newHighScore, writer);
-//                writer.flush();
-//                writer.close();
-//                return true; // Success
-//            }
-//
-//        } catch (IOException e) {
-//            Log.e("JsonProcessor", "Error saving JSON", e);
-//            return false; // Failure
-//        }
-//
-//    }
-
 
     public static int getHighScore(Context context) {
         try {

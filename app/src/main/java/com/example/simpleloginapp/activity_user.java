@@ -4,21 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class activity_user extends ComponentActivity {
 
     Context context = this;
-    private FirebaseAuth mAuth;
     String username = Auth.getInstance(this).getUsername();
 
 
@@ -34,18 +28,8 @@ public class activity_user extends ComponentActivity {
             return insets;
         });
         startUp();
-
-        mAuth = FirebaseAuth.getInstance();
     }
     private void startUp() {
-//        Button savedGameBtn = findViewById(R.id.savedGameBtn);
-//        savedGameBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, saved_game.class);
-//                startActivity(intent);
-//            }
-//        });
         // Change the username to the current user
         android.widget.TextView username = findViewById(R.id.username);
         username.setText(this.username);

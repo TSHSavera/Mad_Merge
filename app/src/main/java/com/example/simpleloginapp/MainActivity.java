@@ -19,8 +19,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import java.util.Objects;
 
 
@@ -28,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     Context context = this;
     TextView registerLink;
-    private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
 
@@ -45,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         startUp();
-
-        mAuth = FirebaseAuth.getInstance();
-
     }
 
     @Override
@@ -65,56 +59,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-
-//    private void loginUser(String email, String password) {
-//        // Show progress bar
-//        progressBar.setVisibility(View.VISIBLE);
-//
-//        // Perform checks
-//        if (email.isEmpty() || password.isEmpty()) {
-//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//            builder.setCancelable(false);
-//            builder.setMessage("Please fill in all fields.");
-//            builder.setTitle("Login Failed");
-//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    progressBar.setVisibility(View.GONE);
-//                    dialogInterface.dismiss();
-//                }
-//            });
-//            AlertDialog dialog = builder.create();
-//            dialog.show();
-//            return;
-//        }
-//
-//        // Authenticate user
-//        AuthAPI auth = new AuthAPI();
-//        if (auth.login(this, email, password).isEmpty()) {
-//            // Successful login
-//            Intent intent = new Intent(context, gameOver.class);
-//            startActivity(intent);
-//            finish();
-//        } else {
-//            // Failed login
-//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//            builder.setCancelable(false);
-//            builder.setMessage("Invalid email or password.");
-//            builder.setTitle("Login Failed");
-//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    progressBar.setVisibility(View.GONE);
-//                    dialogInterface.dismiss();
-//                }
-//            });
-//            AlertDialog dialog = builder.create();
-//            dialog.show();
-//        }
-//
-//
-//    }
-
 
     private void startUp() {
         progressBar = findViewById(R.id.loginProgressBar);

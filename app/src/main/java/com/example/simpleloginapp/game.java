@@ -18,18 +18,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.google.firebase.auth.FirebaseAuth;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class game extends ComponentActivity {
 
     Context context = this;
     ImageView user_icon;
-    Button saveBtn;
     Button resignBtn;
     String username;
 
@@ -81,32 +75,6 @@ public class game extends ComponentActivity {
                 startActivity(intent);
             }
         });
-
-//        saveBtn = findViewById(R.id.saveBtn);
-//        saveBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//                builder.setTitle("Save Game");
-//                builder.setCancelable(false);
-//                builder.setMessage("Are you sure you want to save this?");
-//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-//                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.dismiss();
-//                    }
-//                });
-//
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
-//            }
-//        });
 
 
         resignBtn = findViewById(R.id.resignBtn);
