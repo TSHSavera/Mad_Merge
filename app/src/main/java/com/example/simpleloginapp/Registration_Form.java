@@ -45,10 +45,11 @@ public class Registration_Form extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         Auth auth = new Auth(this);
-        if (auth.getInstance(this) == null || auth.getInstance(this).getUsername() == null) {
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
             Log.d("User", "User is not signed in.");
         } else {
-            Log.d ("User", "User is signed in: " + Objects.requireNonNull(new Auth(this).getInstance(this)).getEmail());
+            new Auth(this);
+            Log.d ("User", "User is signed in: " + Objects.requireNonNull(Auth.getInstance(this)).getEmail());
             Intent intent = new Intent(context, game.class);
             startActivity(intent);
             finish();
@@ -56,6 +57,12 @@ public class Registration_Form extends AppCompatActivity {
     }
 
     private void startUp() {
+        // Check if there's a user signed in
+        if (Auth.getInstance(this) != null && Auth.getInstance(this).getUsername() != null) {
+            Intent intent = new Intent(context, game.class);
+            startActivity(intent);
+            finish();
+        }
         loginLink = findViewById(R.id.loginLink);
         loginLink.setOnClickListener(new View.OnClickListener() {
             @Override

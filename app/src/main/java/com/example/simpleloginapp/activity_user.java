@@ -30,6 +30,13 @@ public class activity_user extends ComponentActivity {
         startUp();
     }
     private void startUp() {
+        // Check if there is a user signed in
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
+            // Redirect to Welcome Activity
+            Intent intent = new Intent(context, Welcome_page.class);
+            startActivity(intent);
+        }
+
         // Change the username to the current user
         android.widget.TextView username = findViewById(R.id.username);
         username.setText(this.username);

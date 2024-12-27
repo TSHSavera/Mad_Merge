@@ -47,6 +47,13 @@ public class game extends ComponentActivity {
                 Log.e("GameEngine", "Error getting username", e1);
             }
         }
+
+        // Check if there is a user signed in
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
+            // Redirect to Welcome Activity
+            Intent intent = new Intent(context, Welcome_page.class);
+            startActivity(intent);
+        }
         startUp();
 
 

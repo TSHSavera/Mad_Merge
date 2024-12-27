@@ -51,6 +51,12 @@ public class gameOver extends ComponentActivity {
         TextView bestScoreLabel = findViewById(R.id.bestScoreLabel);
         bestScoreLabel.setText(String.valueOf(bestScore));
 
+        // Check if the user is signed in
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
+            // Redirect to Welcome Activity
+            Intent intent = new Intent(context, Welcome_page.class);
+            startActivity(intent);
+        }
         startUp();
     }
 
@@ -65,6 +71,7 @@ public class gameOver extends ComponentActivity {
             TextView username = findViewById(R.id.username);
             username.setText(Objects.requireNonNull(Auth.getInstance(this)).getUsername());
         }
+
 
 
         user_icon = findViewById(R.id.user_icon);
