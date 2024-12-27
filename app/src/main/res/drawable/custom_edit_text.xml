@@ -8,6 +8,6 @@
         android:radius="5dp">
     </corners>
    <solid
-       android:color="@color/md_theme_surfaceContainer">
+       android:color="#341C1A">
    </solid>
 </shape>

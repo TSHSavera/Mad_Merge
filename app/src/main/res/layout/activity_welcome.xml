@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome"
             android:gravity="center"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#FFF8F6"
             android:layout_marginBottom="10dp"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="To"
             android:gravity="center"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#FFF8F6"
             android:textSize="40sp"
             android:textStyle="bold"
             android:fontFamily="@font/meowscript_app_title"/>
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Mad  Merge"
             android:gravity="center"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#FFF8F6"
             android:textSize="60sp"
             android:textStyle="bold"
             android:fontFamily="@font/meowscript_app_title"/>
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"
-                android:textColor="@color/md_theme_onBackground"
+                android:textColor="#FFF8F6"
                 android:textSize="16sp"/>
 
             <TextView
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textStyle="bold"
-                android:textColor="@color/md_theme_onBackground"
+                android:textColor="#FFF8F6"
                 android:layout_marginLeft="8dp"
                 android:textSize="17sp"/>
         </LinearLayout>

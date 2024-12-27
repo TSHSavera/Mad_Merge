@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:text="(Username)"
-                    android:textColor="@color/md_theme_onPrimary"
+                    android:textColor="#FFF8F6"
                     android:textSize="12sp"
                     android:gravity="center" />
             </LinearLayout>
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:text="Game Over"
             android:gravity="center"
-            android:textColor="@color/md_theme_onPrimary"
+            android:textColor="#FFF8F6"
             android:layout_marginTop="40dp"
             android:textSize="70sp"
             android:textStyle="bold"
@@ -102,7 +102,7 @@
                 android:layout_marginBottom="50dp"
                 android:gravity="center"
                 android:text="(Username)"
-                android:textColor="@color/md_theme_onPrimary"
+                android:textColor="#ffffff"
                 android:textSize="17sp" />
 
 
@@ -127,7 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Score"
-                        android:textColor="@color/md_theme_onPrimary"
+                        android:textColor="#ffffff"
                         android:textStyle="bold"
                         android:textSize="22sp"/>
 
@@ -157,7 +157,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Best"
-                        android:textColor="@color/md_theme_onPrimary"
+                        android:textColor="#ffffff"
                         android:textStyle="bold"
                         android:textSize="22sp"/>
 
@@ -187,7 +187,7 @@
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:layout_marginTop="80dp"
-            android:textColor="@color/md_theme_onPrimary"
+            android:textColor="#341D1D"
             android:text="New Game"/>
 
     </LinearLayout>

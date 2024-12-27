@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Login"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#FFF8F6"
             android:textSize="75sp"
             android:textStyle="bold"
             android:fontFamily="@font/meowscript_app_title"/>
@@ -45,7 +45,7 @@
             android:layout_marginTop="40dp"
             android:gravity="left"
             android:text="Email"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#F8D4C9"
             android:textSize="17sp" />
 
 
@@ -59,8 +59,9 @@
             android:paddingBottom="20dp"
             android:paddingLeft="15dp"
             android:textSize="20sp"
-            android:textColor="@color/md_theme_onSurface"
+            android:textColor="#F8D4C9"
             android:hint="@string/email_hint"
+            android:textColorHint="#B99D96"
             />
 
         <TextView
@@ -69,7 +70,7 @@
             android:layout_marginTop="15dp"
             android:gravity="left"
             android:text="Password"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="#F8D4C9"
             android:textSize="17sp" />
 
         <EditText
@@ -92,7 +93,7 @@
             android:text="Login"
             android:layout_marginTop="190dp"
             android:textSize="18sp"
-            android:textColor="@color/md_theme_onPrimary"
+            android:textColor="#3A0B01"
             android:background="@drawable/custom_form_button" />
 
         <LinearLayout
@@ -106,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account?"
-                android:textColor="@color/md_theme_onBackground"
+                android:textColor="#F1DFDA"
                 android:textSize="16sp"/>
 
             <TextView
@@ -115,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="Register"
                 android:textStyle="bold"
-                android:textColor="@color/md_theme_onBackground"
+                android:textColor="#F1DFDA"
                 android:layout_marginLeft="5dp"
                 android:textSize="16sp"/>
         </LinearLayout>
