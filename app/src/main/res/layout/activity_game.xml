@@ -351,14 +351,14 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/saveBtn"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="6dp"
-                    android:background="@drawable/custom_save_new_game_btn"
-                    android:text="Save"
-                    android:textColor="@color/md_theme_onPrimary"/>
+<!--                <Button-->
+<!--                    android:id="@+id/saveBtn"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginRight="6dp"-->
+<!--                    android:background="@drawable/custom_save_new_game_btn"-->
+<!--                    android:text="Save"-->
+<!--                    android:textColor="@color/md_theme_onPrimary"/>-->
 
                 <Button
                     android:id="@+id/resignBtn"
