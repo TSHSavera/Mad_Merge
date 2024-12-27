@@ -46,6 +46,10 @@ public class activity_user extends ComponentActivity {
 //                startActivity(intent);
 //            }
 //        });
+        // Change the username to the current user
+        android.widget.TextView username = findViewById(R.id.username);
+        username.setText(this.username);
+
 
         findViewById(R.id.logOutBtn).setOnClickListener(v -> {
             // Logout
