@@ -76,7 +76,7 @@ public class Registration_Form extends AppCompatActivity {
             Log.d("User", "User is not signed in.");
         } else {
             Log.d ("User", "User is signed in: " + Objects.requireNonNull(new Auth(this).getInstance(this)).getEmail());
-            Intent intent = new Intent(context, saved_game.class);
+            Intent intent = new Intent(context, gameOver.class);
             startActivity(intent);
             finish();
         }
