@@ -1,5 +1,7 @@
 package com.example.simpleloginapp;
 
+import static com.example.simpleloginapp.JsonProcessor.getHighScore;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -38,15 +40,16 @@ public class gameOver extends ComponentActivity {
         });
 
         // Get the scores from the Intent
-        int score = getIntent().getIntExtra("SCORE", 0);
-        int bestScore = getIntent().getIntExtra("BEST_SCORE", 0);
-
+        String score = getIntent().getStringExtra("SCORE");
+        Log.d("GameEngine", "Score: " + score);
         // Update the UI with the scores
         TextView scoreTextView = findViewById(R.id.scoreLabel);
-        TextView bestScoreTextView = findViewById(R.id.bestScoreLabel);
+        scoreTextView.setText(score);
 
-        scoreTextView.setText(String.valueOf(score));
-        bestScoreTextView.setText(String.valueOf(bestScore));
+        // Get the best score
+        int bestScore = getHighScore(this);
+        TextView bestScoreLabel = findViewById(R.id.bestScoreLabel);
+        bestScoreLabel.setText(String.valueOf(bestScore));
 
         startUp();
     }
@@ -86,7 +89,8 @@ public class gameOver extends ComponentActivity {
         TextView username = findViewById(R.id.username);
         TextView usernameMidContent = findViewById(R.id.usernameMidContent);
 
-        username.setText(Auth.getInstance(this).getUsername());
+        username.setText(Objects.requireNonNull(Auth.getInstance(this)).getUsername());
         usernameMidContent.setText(Auth.getInstance(this).getUsername());
+
     }
 }

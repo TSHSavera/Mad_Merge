@@ -1,5 +1,7 @@
 package com.example.simpleloginapp;
 
+import static com.example.simpleloginapp.JsonProcessor.saveHighScores;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -48,7 +50,7 @@ public class game extends ComponentActivity {
         // Load high scores to the screen
         TextView bestScoreLabel = findViewById(R.id.bestScoreLabel);
         try {
-            int bestScore = JsonProcessor.loadHighScores(this, username);
+            int bestScore = JsonProcessor.getHighScore(this);
             bestScoreLabel.setText(String.valueOf(bestScore));
         } catch (Exception e) {
             Log.e("GameEngine", "Error loading high scores", e);
@@ -389,15 +391,8 @@ public class game extends ComponentActivity {
         // Check if the current score is greater than the best score
         if (currentScore > bestScore) {
             Log.i("GameEngine", "New best score: " + currentScore);
-            highScore hs = new highScore(username, ((TextView) findViewById(R.id.scoreLabel)).getText().toString());
-            // Create object list
-            List<highScore> highScores = new ArrayList<>();
-            // Add the new best score
-            highScores.add(hs);
-
-
             // Save the new best score
-            if (JsonProcessor.saveHighScores(this, "highScores.json", highScores, "multiple")) {
+            if (saveHighScores(this, currentScore)) {
                 // Alert the user
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("New Best Score");
@@ -407,6 +402,7 @@ public class game extends ComponentActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
                         Intent intent = new Intent(context, gameOver.class);
+                        intent.putExtra("SCORE", String.valueOf(currentScore));
                         startActivity(intent);
                     }
                 });
@@ -415,6 +411,8 @@ public class game extends ComponentActivity {
             }
         } else {
             Intent intent = new Intent(context, gameOver.class);
+            Log.d("GameEngine", "Score: " + currentScore);
+            intent.putExtra("SCORE", String.valueOf(currentScore));
             startActivity(intent);
         }
     }
