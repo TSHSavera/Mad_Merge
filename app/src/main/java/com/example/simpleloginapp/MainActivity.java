@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,59 +51,67 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        if (mAuth.getCurrentUser() != null) {
-            Intent intent = new Intent(MainActivity.this, game.class);
+        // Check if user is signed in (non-null) and update UI accordingly.
+        Auth auth = new Auth(this);
+        if (Auth.getInstance(this) == null || Auth.getInstance(this).getUsername() == null) {
+            Log.d("User", "User is not signed in.");
+        } else {
+            new Auth(this);
+            Log.d ("User", "User is signed in: " + Objects.requireNonNull(Auth.getInstance(this)).getEmail());
+            Intent intent = new Intent(context, saved_game.class);
             startActivity(intent);
             finish();
         }
     }
 
-    private void loginUser(String email, String password) {
-        // Show progress bar
-        progressBar.setVisibility(View.VISIBLE);
-
-        // Perform checks
-        if (email.isEmpty() || password.isEmpty()) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setCancelable(false);
-            builder.setMessage("Please fill in all fields.");
-            builder.setTitle("Login Failed");
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    progressBar.setVisibility(View.GONE);
-                    dialogInterface.dismiss();
-                }
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            return;
-        }
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Intent intent = new Intent(MainActivity.this, game.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                        builder.setCancelable(false);
-                        builder.setMessage("Login Failed. Please try again.");
-                        builder.setTitle("Login Failed");
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                            }
-                        });
-                        AlertDialog dialog = builder.create();
-                        // Hide progress bar
-                        progressBar.setVisibility(View.GONE);
-                        dialog.show();
-
-                    }
-                });
-    }
+//    private void loginUser(String email, String password) {
+//        // Show progress bar
+//        progressBar.setVisibility(View.VISIBLE);
+//
+//        // Perform checks
+//        if (email.isEmpty() || password.isEmpty()) {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//            builder.setCancelable(false);
+//            builder.setMessage("Please fill in all fields.");
+//            builder.setTitle("Login Failed");
+//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    progressBar.setVisibility(View.GONE);
+//                    dialogInterface.dismiss();
+//                }
+//            });
+//            AlertDialog dialog = builder.create();
+//            dialog.show();
+//            return;
+//        }
+//
+//        // Authenticate user
+//        AuthAPI auth = new AuthAPI();
+//        if (auth.login(this, email, password).isEmpty()) {
+//            // Successful login
+//            Intent intent = new Intent(context, saved_game.class);
+//            startActivity(intent);
+//            finish();
+//        } else {
+//            // Failed login
+//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//            builder.setCancelable(false);
+//            builder.setMessage("Invalid email or password.");
+//            builder.setTitle("Login Failed");
+//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    progressBar.setVisibility(View.GONE);
+//                    dialogInterface.dismiss();
+//                }
+//            });
+//            AlertDialog dialog = builder.create();
+//            dialog.show();
+//        }
+//
+//
+//    }
 
 
     private void startUp() {
@@ -132,8 +143,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText email = findViewById(R.id.usernameET);
                 EditText password = findViewById(R.id.passwordET);
-                loginUser(email.getText().toString(), password.getText().toString());
+                loginThenPassContext(email.getText().toString(), password.getText().toString());
             }
         });
+    }
+    private void loginThenPassContext(String email, String password) {
+        String status = new Auth(this).login(this,email, password);
+        if (status.isEmpty()) {
+            Intent intent = new Intent(context, saved_game.class);
+            startActivity(intent);
+            finish();
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setCancelable(false);
+            builder.setMessage(status);
+            builder.setTitle("Login Failed");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    progressBar.setVisibility(View.GONE);
+                    dialogInterface.dismiss();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 }

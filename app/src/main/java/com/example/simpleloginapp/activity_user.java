@@ -47,8 +47,11 @@ public class activity_user extends ComponentActivity {
 
         findViewById(R.id.logOutBtn).setOnClickListener(v -> {
             // Logout
-            mAuth.signOut();
-            finish();
+            new Auth(this).logout(this);
+            // Redirect to Welcome Activity
+            Intent intent = new Intent(context, Welcome_page.class);
+            startActivity(intent);
+
         });
     }
 }

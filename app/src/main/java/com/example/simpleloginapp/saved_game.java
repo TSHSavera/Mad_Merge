@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Objects;
 
 public class saved_game extends ComponentActivity {
 
@@ -52,5 +55,9 @@ public class saved_game extends ComponentActivity {
                 startActivity(intent);
             }
         });
+
+        // Change the username to the current user
+        TextView username = findViewById(R.id.username);
+        username.setText(Auth.getInstance(this).getUsername());
     }
 }
